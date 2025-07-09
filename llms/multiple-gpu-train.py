@@ -173,6 +173,12 @@ def compute_accuracy(model, dataloader, device):
 
 
 if __name__ == "__main__":
+    # rather than running the code as a “regular” Python script (via python ...py) 
+    # and manually spawning processes from within Python using multiprocessing.spawn 
+    # we will not run this as python script but use torchrun
+    # when we run using torchrun, it launces one process per GPU and assign each process a unique rank
+    # other metadata as well like world_size, local rank which is read these variables and pass them to main()
+
     # NEW: Use environment variables set by torchrun if available, otherwise default to single-process.
     if "WORLD_SIZE" in os.environ:
         world_size = int(os.environ["WORLD_SIZE"])
@@ -189,12 +195,23 @@ if __name__ == "__main__":
     # Only print on rank 0 to avoid duplicate prints from each GPU process
     if rank == 0:
         print("PyTorch version:", torch.__version__)
-        print("CUDA available:", torch.cuda.is_available())
-        print("Number of GPUs available:", torch.cuda.device_count())
+        print("CUDA available:", torch.mps.is_available())
+        print("Number of GPUs available:", torch.mps.device_count())
 
-    torch.manual_seed(123)
+    torch.manual_seed(123) # random seed for reproducibility
     num_epochs = 3
     main(rank, world_size, num_epochs)
+    # 1. intialized distributed env via ddp_setup
+    # 2. loads training and test dataset
+    # 3. Sets up the model, performs training
+    # transfer both model and data using .to(rank), where rank correponds to GPU index for current process
+    # 4. Wrap the model using DDP, enables synchronized gradient updates across all GPUs
+    # 5. Evaluate the model and destroy_process_graph() to properly shut down the process
+
+    # torchrun --nproc_per_node=2 multiple-gpu-train.py
+    # torchrun --nproc_per_node=$(nvidia-smi -L | wc -l) multiple-gpu-train.py
+
+
 
 
 
