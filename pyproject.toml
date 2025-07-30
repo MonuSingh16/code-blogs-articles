@@ -7,6 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "gensim>=4.3.3",
     "ipykernel>=6.29.5",
+    "lamini>=3.4.6",
+    "llama-cpp-python>=0.3.14",
     "matplotlib>=3.10.3",
     "mlflow>=3.1.1",
     "seaborn>=0.13.2",
