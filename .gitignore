@@ -167,3 +167,4 @@ data/
 _data/
 _model/
 .DS_Store
+/data.csv

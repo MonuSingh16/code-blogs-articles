@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "datasets>=4.0.0",
+    "dvc>=3.62.0",
     "gensim>=4.3.3",
     "ipykernel>=6.29.5",
     "lamini>=3.4.6",
