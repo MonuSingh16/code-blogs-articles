@@ -165,4 +165,5 @@ artifact-store/
 *.db
 data/
 _data/
+_model/
 .DS_Store
