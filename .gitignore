@@ -165,6 +165,6 @@ artifact-store/
 *.db
 data/
 _data/
-_model/
+_models/
 .DS_Store
 /data.csv
