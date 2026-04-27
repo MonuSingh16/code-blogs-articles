@@ -166,6 +166,7 @@ artifact-store/
 data/
 _data/
 _models/
+_utils/
 .DS_Store
 /data.csv
 03-coding-puzzles-qs/
