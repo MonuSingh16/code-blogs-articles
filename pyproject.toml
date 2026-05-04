@@ -20,6 +20,7 @@ dependencies = [
     "nltk==3.9.1",
     "optuna>=4.4.0",
     "reasoning-from-scratch>=0.1.19",
+    "redis>=7.4.0",
     "rouge-score==0.1.2",
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",

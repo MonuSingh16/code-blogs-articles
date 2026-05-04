@@ -624,6 +624,7 @@ dependencies = [
     { name = "nltk" },
     { name = "optuna" },
     { name = "reasoning-from-scratch" },
+    { name = "redis" },
     { name = "rouge-score" },
     { name = "scikit-learn" },
     { name = "seaborn" },
@@ -653,6 +654,7 @@ requires-dist = [
     { name = "nltk", specifier = "==3.9.1" },
     { name = "optuna", specifier = ">=4.4.0" },
     { name = "reasoning-from-scratch", specifier = ">=0.1.19" },
+    { name = "redis", specifier = ">=7.4.0" },
     { name = "rouge-score", specifier = "==0.1.2" },
     { name = "scikit-learn", specifier = ">=1.7.1" },
     { name = "seaborn", specifier = ">=0.13.2" },
@@ -3741,6 +3743,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/1d/ec/73c6d642781142e99d4c902e1f4542a34d1c30fdce9f49eb74a156de6915/reasoning_from_scratch-0.1.19.tar.gz", hash = "sha256:926100f13f9b24499f9c97379e8453ffaa7c9a2ab5b379d7f281becd3342b0fa", size = 74933 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/76/ea/3cf7af987c11da7475471be59900547f992ef89fb8355f47a2594ff6ffc7/reasoning_from_scratch-0.1.19-py3-none-any.whl", hash = "sha256:2329717fd77fd218760228bcd3d30c49c0f56e3df0372246874e257b5244a54a", size = 63657 },
+]
+
+[[package]]
+name = "redis"
+version = "7.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/7f/3759b1d0d72b7c92f0d70ffd9dc962b7b7b5ee74e135f9d7d8ab06b8a318/redis-7.4.0.tar.gz", hash = "sha256:64a6ea7bf567ad43c964d2c30d82853f8df927c5c9017766c55a1d1ed95d18ad", size = 4943913 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/74/3a/95deec7db1eb53979973ebd156f3369a72732208d1391cd2e5d127062a32/redis-7.4.0-py3-none-any.whl", hash = "sha256:a9c74a5c893a5ef8455a5adb793a31bb70feb821c86eccb62eebef5a19c429ec", size = 409772 },
 ]
 
 [[package]]
