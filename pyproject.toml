@@ -25,6 +25,7 @@ dependencies = [
     "mlflow>=3.1.1",
     "nltk==3.9.1",
     "optuna>=4.4.0",
+    "rank-bm25>=0.2.2",
     "reasoning-from-scratch>=0.1.19",
     "redis>=7.4.0",
     "rouge-score==0.1.2",
