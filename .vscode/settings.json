@@ -1,3 +1,5 @@
 {
-    "window.zoomLevel": -0.25
+    "window.zoomLevel": -0.25,
+    "search.useIgnoreFiles": false,
+    "explorer.excludeGitIgnore": false
 }
