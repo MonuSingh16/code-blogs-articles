@@ -1,12 +1,9 @@
 # LLM RAG System Design
 
 See also: [RAG Framework for Multi-Document Review](rag-multi-document-review.ipynb),
-[Chunking Types](../01-code-nb-scripts/llm-mechanics/llm-chunking-types.ipynb),
-[Reranking & Context](../01-code-nb-scripts/llm-mechanics/llm-reranking-context.ipynb),
-[ANN / Vector Search](../01-code-nb-scripts/llm-mechanics/llm-ann-vector-search.ipynb),
-[LLM Evals Fundamentals](../01-code-nb-scripts/llm-mechanics/llm-evals-fundamentals.ipynb),
-[Supervised Fine-Tuning](../01-code-nb-scripts/llm-mechanics/llm-supervised-ft.ipynb),
-[LoRA](../01-code-nb-scripts/llm-mechanics/llm-understanding-lora.ipynb).
+[RAG Pipeline: Chunking, Vector Search, Reranking](../01-code-nb-scripts/04-llm-mechanics/08-rag-pipeline.ipynb),
+[LLM Evals](../01-code-nb-scripts/04-llm-mechanics/09-llm-evals.ipynb),
+[Pretraining, Fine-tuning, SFT, and LoRA](../01-code-nb-scripts/04-llm-mechanics/04-pretraining-and-finetuning.ipynb).
 
 ---
 
@@ -271,7 +268,7 @@ How do you chunk documents when the right chunk size differs by document type?
 
 ## RAG vs. Fine-Tuning — When to Choose Each
 
-**Before reaching for fine-tuning at all:** exhaust prompt engineering first — clear system prompt, chain-of-thought, few-shot — and measure it against a golden set (Recall@k/Precision@k offline, faithfulness/abstention online) before deciding prompting alone can't hit the bar. The full fine-tuning mechanics (data curation, PEFT/LoRA, hyperparameters, monitoring for drift) are already covered in [Supervised Fine-Tuning](../01-code-nb-scripts/llm-mechanics/llm-supervised-ft.ipynb) and [LoRA](../01-code-nb-scripts/llm-mechanics/llm-understanding-lora.ipynb) — not repeated here.
+**Before reaching for fine-tuning at all:** exhaust prompt engineering first — clear system prompt, chain-of-thought, few-shot — and measure it against a golden set (Recall@k/Precision@k offline, faithfulness/abstention online) before deciding prompting alone can't hit the bar. The full fine-tuning mechanics (data curation, PEFT/LoRA, hyperparameters, monitoring for drift) are already covered in [Pretraining, Fine-tuning, SFT, and LoRA](../01-code-nb-scripts/04-llm-mechanics/04-pretraining-and-finetuning.ipynb) — not repeated here.
 
 *You are working on an LLM feature for a product team that needs better answers than a plain prompt can give. The team is deciding whether to add retrieval over source documents, fine-tune a model, or do both.*
 
