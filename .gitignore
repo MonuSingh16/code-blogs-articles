@@ -175,3 +175,4 @@ _archive/
 .DS_Store
 xx_courses/
 mlflow.db
+model_bundle/

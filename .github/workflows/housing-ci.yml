@@ -1,0 +1,55 @@
+name: housing-ci
+
+on:
+  push:
+    branches: [main]
+    paths: &paths
+      - "03-small-projects/01-housing-price-regression/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/housing-ci.yml"
+  pull_request:
+    paths: *paths
+
+defaults:
+  run:
+    working-directory: 03-small-projects/01-housing-price-regression
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --frozen
+      - name: Lint
+        run: uvx ruff check .
+      - name: Test
+        run: uv run pytest -q
+
+      - name: Train, promote, export (fast settings)
+        env:
+          HOUSING_N_ITER: "3"
+        run: |
+          uv run python -m housing.train
+          uv run python -m housing.registry
+          uv run python -m housing.export
+
+      - name: Build image
+        run: docker build -t housing-api .
+
+      - name: Smoke test container
+        run: |
+          docker run -d --name api -p 8080:8000 housing-api
+          for i in $(seq 1 30); do curl -sf localhost:8080/health && break || sleep 2; done
+          curl -sf localhost:8080/health
+          curl -sf -X POST localhost:8080/predict \
+            -H "Content-Type: application/json" \
+            -d '{"MedInc": 8.3, "HouseAge": 41, "AveRooms": 7.0, "AveBedrms": 1.0, "Population": 322, "AveOccup": 2.5, "Latitude": 37.88, "Longitude": -122.23}'
+
+      - name: Container logs on failure
+        if: failure()
+        run: docker logs api

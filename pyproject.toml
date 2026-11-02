@@ -10,6 +10,7 @@ dependencies = [
     "dotenv>=0.9.9",
     "dvc>=3.62.0",
     "faiss-cpu>=1.11.0.post1",
+    "fastapi>=0.116.1",
     "gensim>=4.3.3",
     "ipykernel>=6.29.5",
     "jellyfish>=1.2.1",
@@ -58,4 +59,9 @@ dependencies = [
 [tool.uv]
 override-dependencies = [
     "umap ; python_version < '0'",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
 ]
