@@ -176,3 +176,5 @@ _archive/
 xx_courses/
 mlflow.db
 model_bundle/
+models/
+logs/

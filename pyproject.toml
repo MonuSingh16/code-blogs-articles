@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "anthropic>=2.4.0",
     "bert-score==0.3.13",
     "datasets>=4.0.0",
     "dotenv>=0.9.9",
@@ -35,8 +36,10 @@ dependencies = [
     "nltk==3.9.1",
     "openpyxl>=3.1.5",
     "optuna>=4.4.0",
+    "pydantic-settings>=2.15.0",
     "pymilvus>=3.0.2",
     "pypdf>=6.21.2",
+    "python-multipart>=0.0.33",
     "rank-bm25>=0.2.2",
     "reasoning-from-scratch>=0.1.19",
     "redis>=7.4.0",
