@@ -40,6 +40,7 @@ dependencies = [
     "pymilvus>=3.0.2",
     "pypdf>=6.21.2",
     "python-multipart>=0.0.33",
+    "ragas>=0.4.3",
     "rank-bm25>=0.2.2",
     "reasoning-from-scratch>=0.1.19",
     "redis>=7.4.0",
