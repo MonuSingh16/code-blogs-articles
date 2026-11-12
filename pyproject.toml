@@ -9,6 +9,7 @@ dependencies = [
     "bert-score==0.3.13",
     "datasets>=4.0.0",
     "dotenv>=0.9.9",
+    "dspy>=3.5.0",
     "dvc>=3.62.0",
     "faiss-cpu>=1.11.0.post1",
     "fastapi>=0.116.1",
